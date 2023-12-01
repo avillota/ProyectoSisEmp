@@ -1,0 +1,113 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.despachos.controller.AreaLogistica" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:layout1="sap.ui.commons.layout">
+    <Page showHeader="true" title="Area logistica" showFooter="true" showNavButton="true" enableScrolling="false">
+        <content>
+            <layout1:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout1:positions>
+                    <layout1:PositionContainer left="0px" top="0px">
+                        <layout1:control>
+                            <IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="Ok">
+                                <items>
+                                    <IconTabFilter icon="sap-icon://product" iconColor="Positive" text="Despachos" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                                        <content>
+                                            <layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L3 M6 S12" position="Center" width="1208.9765625px" containerQuery="false" hSpacing="1" vSpacing="1" visible="true" class="sapUiMediumMargin">
+                                                <layout:content>
+                                                    <GenericTile header="Pasto" subheader="" frameType="OneByOne" press="_onGenericTilePress">
+                                                        <tileContent>
+                                                            <TileContent footer="Nuevas solicitudes" unit="">
+                                                                <content>
+                                                                    <NumericContent value="10" valueColor="Error" indicator="None" icon="sap-icon://product"/>
+                                                                </content>
+                                                            </TileContent>
+                                                        </tileContent>
+                                                    </GenericTile>
+                                                    <GenericTile header="Arroz" subheader="" frameType="OneByOne" press="_onGenericTilePress1">
+                                                        <tileContent>
+                                                            <TileContent footer="Nuevas solicitudes" unit="">
+                                                                <content>
+                                                                    <NumericContent value="17" valueColor="Error" indicator="None" icon="sap-icon://product"/>
+                                                                </content>
+                                                            </TileContent>
+                                                        </tileContent>
+                                                    </GenericTile>
+                                                </layout:content>
+                                            </layout:Grid>
+                                        </content>
+                                    </IconTabFilter>
+                                    <IconTabSeparator icon="" iconDensityAware="false"/>
+                                    <IconTabFilter icon="sap-icon://retail-store" iconColor="Default" text="Inventario" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                                        <content>
+                                            <Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{path:'/Tabla1Set', templateShareable:true}">
+                                                <infoToolbar>
+                                                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                                        <content>
+                                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </content>
+                                                    </Toolbar>
+                                                </infoToolbar>
+                                                <headerToolbar>
+                                                    <OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+                                                        <content>
+                                                            <Title text="Inventario Actual" titleStyle="H4" width="auto" textAlign="Begin" visible="true" wrapping="false" class="sapUiTinyMargin"/>
+                                                            <ToolbarSpacer width=""/>
+                                                        </content>
+                                                    </OverflowToolbar>
+                                                </headerToolbar>
+                                                <columns>
+                                                    <Column width="120px" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                                        <header>
+                                                            <Text text="ID Producto" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </header>
+                                                        <footer/>
+                                                    </Column>
+                                                    <Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                                        <header>
+                                                            <Text text="Nombre Producto" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </header>
+                                                        <footer/>
+                                                    </Column>
+                                                    <Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                                        <header>
+                                                            <Text text="Cantidad Disponible (Toneladas)" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </header>
+                                                        <footer/>
+                                                    </Column>
+                                                    <Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                                        <header>
+                                                            <Text text="Precio Total Inventario" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </header>
+                                                        <footer/>
+                                                    </Column>
+                                                </columns>
+                                                <items>
+                                                    <ColumnListItem type="Navigation" press="_onRowPress">
+                                                        <cells>
+                                                            <Text text="{ID}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                            <Text text="{Cliente}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                            <Text text="{path: 'CantidadDisponible', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                            <Text text="{path: 'PrecioInventario', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                        </cells>
+                                                    </ColumnListItem>
+                                                </items>
+                                            </Table>
+                                        </content>
+                                    </IconTabFilter>
+                                </items>
+                                <content/>
+                            </IconTabBar>
+                        </layout1:control>
+                    </layout1:PositionContainer>
+                </layout1:positions>
+            </layout1:AbsoluteLayout>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

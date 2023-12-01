@@ -1,0 +1,162 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="dce135f73ea62f561a1ea9c5" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="dce135f73ea62f561a1ea9c5_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="PastosSet" EntityType="dce135f73ea62f561a1ea9c5.Pastos" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ArrozSet" EntityType="dce135f73ea62f561a1ea9c5.Arroz" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="Tabla1Set" EntityType="dce135f73ea62f561a1ea9c5.Tabla1" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="PedidoSet" EntityType="dce135f73ea62f561a1ea9c5.Pedido" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="PedidoPastosPastos" Association="dce135f73ea62f561a1ea9c5.PedidoPastosPastos" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="PedidoSet" Role="FromRole_PedidoPastosPastos"/>
+                    <End EntitySet="PastosSet" Role="ToRole_PedidoPastosPastos"/>
+                </AssociationSet>
+                <AssociationSet Name="PedidoArrozArroz" Association="dce135f73ea62f561a1ea9c5.PedidoArrozArroz" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="PedidoSet" Role="FromRole_PedidoArrozArroz"/>
+                    <End EntitySet="ArrozSet" Role="ToRole_PedidoArrozArroz"/>
+                </AssociationSet>
+                <EntitySet Name="PastosActSet" EntityType="dce135f73ea62f561a1ea9c5.PastosAct" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="ArrozActSet" EntityType="dce135f73ea62f561a1ea9c5.ArrozAct" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="dataSet" EntityType="dce135f73ea62f561a1ea9c5.data" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="dataRelationNamePastos" Association="dce135f73ea62f561a1ea9c5.dataRelationNamePastos" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="dataSet" Role="FromRole_dataRelationNamePastos"/>
+                    <End EntitySet="PastosSet" Role="ToRole_dataRelationNamePastos"/>
+                </AssociationSet>
+                <AssociationSet Name="dataRelationName1Arroz" Association="dce135f73ea62f561a1ea9c5.dataRelationName1Arroz" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="dataSet" Role="FromRole_dataRelationName1Arroz"/>
+                    <End EntitySet="ArrozSet" Role="ToRole_dataRelationName1Arroz"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="Pastos">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cliente"/>
+                <Property Name="Cantidad" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cantidad"/>
+                <Property Name="PrecioTotal" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PrecioTotal"/>
+                <Property Name="MetodoPago" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoPago"/>
+                <Property Name="MetodoEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoEntrega"/>
+                <Property Name="___FK_5cdf82d3625f4cf41a1eb908_00008" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_5cdf82d3625f4cf41a1eb908_00008"/>
+                <Property Name="___FK_5b24d88ae6d510cf1a2be531_00002" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_5b24d88ae6d510cf1a2be531_00002"/>
+            </EntityType>
+            <EntityType Name="Arroz">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cliente"/>
+                <Property Name="Cantidad" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cantidad"/>
+                <Property Name="PrecioTotal" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PrecioTotal"/>
+                <Property Name="MetodoPago" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoPago"/>
+                <Property Name="MetodoEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoEntrega"/>
+                <Property Name="___FK_83033de29d9f81fe1a1eba16_00001" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_83033de29d9f81fe1a1eba16_00001"/>
+                <Property Name="___FK_5b24d88ae6d510cf1a2be531_00004" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_5b24d88ae6d510cf1a2be531_00004"/>
+            </EntityType>
+            <EntityType Name="Tabla1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cliente"/>
+                <Property Name="CantidadDisponible" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CantidadDisponible"/>
+                <Property Name="PrecioInventario" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PrecioInventario"/>
+            </EntityType>
+            <EntityType Name="Pedido" sap:pdm-semantics="business-data">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="Producto" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Producto"/>
+                <Property Name="Cantidad" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cantidad"/>
+                <Property Name="MetodoEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoEntrega"/>
+                <Property Name="Estado" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Estado"/>
+                <NavigationProperty Name="Pastos" Relationship="dce135f73ea62f561a1ea9c5.PedidoPastosPastos" FromRole="FromRole_PedidoPastosPastos" ToRole="ToRole_PedidoPastosPastos"/>
+                <NavigationProperty Name="Arroz" Relationship="dce135f73ea62f561a1ea9c5.PedidoArrozArroz" FromRole="FromRole_PedidoArrozArroz" ToRole="ToRole_PedidoArrozArroz"/>
+            </EntityType>
+            <Association Name="PedidoPastosPastos">
+                <End Type="dce135f73ea62f561a1ea9c5.Pedido" Multiplicity="1" Role="FromRole_PedidoPastosPastos"/>
+                <End Type="dce135f73ea62f561a1ea9c5.Pastos" Multiplicity="*" Role="ToRole_PedidoPastosPastos"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PedidoPastosPastos">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PedidoPastosPastos">
+                        <PropertyRef Name="___FK_5cdf82d3625f4cf41a1eb908_00008"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PedidoArrozArroz">
+                <End Type="dce135f73ea62f561a1ea9c5.Pedido" Multiplicity="1" Role="FromRole_PedidoArrozArroz"/>
+                <End Type="dce135f73ea62f561a1ea9c5.Arroz" Multiplicity="*" Role="ToRole_PedidoArrozArroz"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PedidoArrozArroz">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PedidoArrozArroz">
+                        <PropertyRef Name="___FK_83033de29d9f81fe1a1eba16_00001"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="PastosAct">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cliente"/>
+                <Property Name="Cantidad" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cantidad"/>
+                <Property Name="PrecioTotal" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PrecioTotal"/>
+                <Property Name="MetodoPago" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoPago"/>
+                <Property Name="MetodoEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoEntrega"/>
+            </EntityType>
+            <EntityType Name="ArrozAct">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cliente"/>
+                <Property Name="Cantidad" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cantidad"/>
+                <Property Name="PrecioTotal" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PrecioTotal"/>
+                <Property Name="MetodoPago" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoPago"/>
+                <Property Name="MetodoEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoEntrega"/>
+            </EntityType>
+            <EntityType Name="data">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Cliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cliente"/>
+                <Property Name="Producto" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Producto"/>
+                <Property Name="Cantidad" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Cantidad"/>
+                <Property Name="MetodoEntrega" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MetodoEntrega"/>
+                <Property Name="Estado" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Estado"/>
+                <NavigationProperty Name="RelationName" Relationship="dce135f73ea62f561a1ea9c5.dataRelationNamePastos" FromRole="FromRole_dataRelationNamePastos" ToRole="ToRole_dataRelationNamePastos"/>
+                <NavigationProperty Name="RelationName1" Relationship="dce135f73ea62f561a1ea9c5.dataRelationName1Arroz" FromRole="FromRole_dataRelationName1Arroz" ToRole="ToRole_dataRelationName1Arroz"/>
+            </EntityType>
+            <Association Name="dataRelationNamePastos">
+                <End Type="dce135f73ea62f561a1ea9c5.data" Multiplicity="1" Role="FromRole_dataRelationNamePastos"/>
+                <End Type="dce135f73ea62f561a1ea9c5.Pastos" Multiplicity="*" Role="ToRole_dataRelationNamePastos"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_dataRelationNamePastos">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_dataRelationNamePastos">
+                        <PropertyRef Name="___FK_5b24d88ae6d510cf1a2be531_00002"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="dataRelationName1Arroz">
+                <End Type="dce135f73ea62f561a1ea9c5.data" Multiplicity="1" Role="FromRole_dataRelationName1Arroz"/>
+                <End Type="dce135f73ea62f561a1ea9c5.Arroz" Multiplicity="*" Role="ToRole_dataRelationName1Arroz"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_dataRelationName1Arroz">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_dataRelationName1Arroz">
+                        <PropertyRef Name="___FK_5b24d88ae6d510cf1a2be531_00004"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

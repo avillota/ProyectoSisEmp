@@ -1,0 +1,46 @@
+{
+    "dataBinding": {
+        "/webapp/view/AreaLogistica.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/EditarInventario.view.xml": {
+            "entitySet": "/Tabla1Set"
+        }, 
+        "/webapp/view/PedidosRecibidos.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Inventario.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/PedidosActuales.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/PedidoPasto.view.xml": {
+            "entitySet": "/PastosSet"
+        }, 
+        "/webapp/view/PedidoArroz.view.xml": {
+            "entitySet": "/ArrozSet"
+        }, 
+        "/webapp/view/SolicitudP.view.xml": {
+            "entitySet": "/dataSet"
+        }, 
+        "/webapp/view/PedidoArrozAct.view.xml": {
+            "entitySet": "/ArrozActSet"
+        }, 
+        "/webapp/view/SolicitudesPasto.view.xml": {
+            "entitySet": "/dataSet"
+        }, 
+        "/webapp/view/SolicitudesArroz.view.xml": {
+            "entitySet": "/dataSet"
+        }, 
+        "/webapp/view/QuickView1.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Popover1.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/ActionSheet1.view.xml": {
+            "entitySet": ""
+        } 
+    }
+}
